@@ -90,4 +90,32 @@ public class ProgramExc {
 			}
 		}
 	}
+	public void distinct(int size) {
+		int secondSize=size;
+		int[]num = new int[size];
+		int[] check = new int[secondSize];;
+		System.out.println("Enter number");
+		Scanner scr =new Scanner(System.in);
+		for(int i=0;i<size;i++) {
+		   num[i]= scr.nextInt();
+		}
+		System.out.println(" Array:"+Arrays.toString(num));		
+		for(int i =0;i<size;i++) {
+			boolean retrunVale = false;
+			for(int j=0;j<i;j++) {
+				if(num[i]==num[j]) {
+					retrunVale = true; 
+					secondSize--;
+					break;
+				}
+			}
+			
+			if(!retrunVale) {
+				System.out.println("distinct Array:"+num[i]);
+			}
+		}
+		
+		//System.out.println("distinct Array:"+Arrays.toString(check));
+		
+	}
 }
